@@ -6,3 +6,4 @@ This repository contains projects pertaining to User Data in backend using pytho
 ## Projects
 The projects are:
 - 0x00 Personal data
+- 0x01 Basic authentication
