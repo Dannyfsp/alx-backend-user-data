@@ -35,7 +35,7 @@ class SessionDBAuth(SessionExpAuth):
             sessions = UserSession.search({'session_id': session_id})
         except Exception:
             return None
-        if len(session) <= 0:
+        if len(sessions) <= 0:
             return None
         cur_time = datetime.now()
         time_span = timedelta(seconds=self.session_duration)
