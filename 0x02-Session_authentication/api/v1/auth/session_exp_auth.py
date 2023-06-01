@@ -12,7 +12,7 @@ from .session_auth import SessionAuth
 class SessionExpAuth(SessionAuth):
     """ Session authentication class with expiration
     """
-    
+
     def __init__(self) -> None:
         """ Initializes a new SessionExpAuth instance
         """
