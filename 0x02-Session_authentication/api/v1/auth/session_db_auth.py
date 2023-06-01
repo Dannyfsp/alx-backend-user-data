@@ -28,7 +28,7 @@ class SessionDBAuth(SessionExpAuth):
             return session_id
 
     def user_id_for_session_id(self, session_id=None):
-        """ Retrieves the user id of the user associated with a 
+        """ Retrieves the user id of the user associated with a
         given session id
         """
         try:
