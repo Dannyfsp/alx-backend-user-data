@@ -87,7 +87,7 @@ def get_reset_password_token() -> str:
     email = request.form.get("email")
     reset_token = None
     try:
-        reset_token = None
+        reset_token = AUTH.get_reset_password_token(email)
     except ValueError:
         reset_token = None
     if reset_token is None:
