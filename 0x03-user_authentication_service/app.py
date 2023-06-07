@@ -4,7 +4,7 @@ A simple Flask app with user authentication features
 """
 
 
-from flask import Flask, jsonify, request, abort
+from flask import Flask, jsonify, request, abort, redirect
 
 from auth import Auth
 
@@ -76,6 +76,23 @@ def profile() -> str:
     if user is None:
         abort(403)
     return jsonify({"email": user.email})
+
+
+@app.route("/reset-password", methods=["POST"], strict_slashes=False)
+def get_reset_password_token() -> str:
+    """ POST /reset-password
+    Return:
+        - The user's password reset response
+    """
+    email = request.form.get("email")
+    reset_token = None
+    try:
+        reset_token = None
+    except ValueError:
+        reset_token = None
+    if reset_token is None:
+        abort(403)
+    return jsonify({"email": email, "reset_token": reset_token})
 
 
 if __name__ == "__main__":
